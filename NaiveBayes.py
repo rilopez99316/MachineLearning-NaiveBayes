@@ -16,3 +16,10 @@ for i in range(10):
   p_class[i] = len(y_train[y_train == i]) / x_train.shape[0]
 
 print(p_class)
+
+p_att_given_class = np.zeros((10,784)) #10 classes of 784 pixels
+for i in range(10):
+  index = y_train == i #traverses classes 
+  p_att_given_class[i] = np.mean(x_train_binary[index], axis = 0) #calculates average of the 1's in each clss, for only column 0
+
+# the number of times attribute j is equal to 1 in training instances of class j / over the number of training instances of class j
