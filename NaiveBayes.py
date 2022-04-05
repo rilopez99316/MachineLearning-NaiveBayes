@@ -48,3 +48,4 @@ print("accuracy: ", accuracy(y_test, prediction))
 cm = confusion_matrix(y_test, prediction)
 ConfusionMatrixDisplay(confusion_matrix=cm).plot()
 plt.show()
+
