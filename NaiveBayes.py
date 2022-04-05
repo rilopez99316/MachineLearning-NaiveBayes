@@ -10,3 +10,9 @@ x_train_binary = (x_train > mean).astype(int) #record boolean: as 1 or 0 and set
 x_test_binary = (x_test > mean).astype(int)#record boolean: as 1 or 0 and sets it to x_test_binary
 
 print(x_train[0])
+
+p_class = np.zeros(10)
+for i in range(10):
+  p_class[i] = len(y_train[y_train == i]) / x_train.shape[0]
+
+print(p_class)
